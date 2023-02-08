@@ -2,7 +2,7 @@ package poo.RelacionObjetos;
 
 import java.util.Arrays;
 
-public class Automovil {
+public class Automovil implements Comparable<Automovil>{
     private int id;
     private String fabricante;
     private String modelo;
@@ -138,5 +138,11 @@ public class Automovil {
 
     public float consumo(int km, float porcentajeCombustible){
         return km / (this.tanque.getCapacidad() * porcentajeCombustible);
+    }
+
+    //para ordenar a traves del atributo fabricante
+    @Override
+    public int compareTo(Automovil a) {
+        return this.fabricante.compareTo(a.fabricante);
     }
 }

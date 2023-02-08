@@ -1,6 +1,7 @@
 package poo.RelacionObjetos;
 
 import java.lang.reflect.Parameter;
+import java.util.Arrays;
 
 public class RelacionObjetosMain {
     public static void main(String[] args) {
@@ -29,11 +30,39 @@ public class RelacionObjetosMain {
         Automovil corrolla = new Automovil("Toyota", "Corolla 2023", ColorEnum.AZUL, TipoAutomovil.DEPORTIVO,
                 new Motor(4, TIpoMotorEnum.GASOLINA), new Persona("Peter", "Parker"), new Tanque(), corollaRuedas);
 
+        Automovil porche = new Automovil("Porche", "911 Turbo", ColorEnum.NEGRO, TipoAutomovil.DEPORTIVO,
+                new Motor(8, TIpoMotorEnum.GASOLINA), new Persona("Peter", "Quil"), new Tanque());
+
+        Rueda[] porcheRuedas = {
+                new Rueda("Michelline", 18, 8),
+                new Rueda("Michelline", 18, 8),
+                new Rueda("Michelline", 18, 8),
+                new Rueda("Michelline", 18, 8)
+        };
+
+        porche.setRuedas(porcheRuedas);
+
 
         System.out.println(audi);
         System.out.println("Audi motor: " + audi.getMotor().getTipoMotor() +  " cilindros: " + audi.getMotor().getCilindros());
-
         System.out.println(corrolla);
+        System.out.println(porche);
+
+        System.out.println("---------------------------------------------------------");
+        System.out.println("Automoviles sorted by fabricante: ");
+
+        Automovil[] cars = new Automovil[3];
+
+        cars[0] = corrolla;
+        cars[1] = audi;
+        cars[2] = porche;
+
+        Arrays.sort(cars);
+
+        for (Automovil car : cars) {
+            System.out.println(car);
+        }
+
 
     }
 }
