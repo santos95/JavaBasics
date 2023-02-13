@@ -1,0 +1,75 @@
+Api Collection
+-estructura de datos - arraylist, listas, mapas entre otros
+
+Collections
+-estructura de datos para almacenar y agrupar objetos
+-para almacenar y agrupar objetos
+-Dos grandes tipos
+    - Map - almacenar objetos tipo clave:valor - diccionario
+    - Collection - dos tipos:
+        - list
+        - sets
+ Api collection
+ -para agrupar objetos
+ -tres: list, sets and maps
+ -list - almacena objetos de forma ordenada - se ordenan en base a una secuencia concreta - sort() para ordenar
+    -interfaz comparable, que tengan un ordenamiento concreto
+    -interfaz comparator
+    -es posible almacenar objetos duplicados
+ -sets - almacena objetos, no admite duplicados y no los almacena de forma ordenada
+    -los elementos siempre son unicos
+ -maps - diccionario - almacena objetos de forma clave:valor
+    -elementos se les asocia a una clave - nombre
+    -key - valor
+ estos crecen de forma automatica - no hay que tener cuidado con el numero de elementos y eso
+
+
+APi collection
+
+dos grandes interfaces
+- map - interfaz map - implementada por:
+ - hashMap - utiliza hashCode para compararse
+    - los identificadores siempre deben ser unicos
+ - treeMap
+    - ordenado
+ - lindedHashMap
+- collection - interfaz dos:
+    - Interfaz list
+        - arraylist - lista volcada en un arreglo, tamano inicial de 10
+            -aumenta su tamano en un 50% de capacidad mas, creando una copia de los anteriores en el nuevo
+            -acceso rapido de lectura
+            -trabaja por debajo como arreglo
+            -la manipulacion de los objetos a lo largo de cualquier posicion - disminuye rendimiento
+            porque debe manipular los objetos para no dejar indices vacios
+            -se elimina un elemento, se desplaza y luego se ordena - disminuye el rendimiento
+            - es rapido agregar al final del arraylist
+        - linkedlist
+            -manipulacion de objetos son rapidas - se realiza a traves de listas enlazadas, trabaja con nodos
+            -cada nodo refencia un objeto - secuencia de elementos enlazados
+            - next - para el siguiente
+            - vista doblemente enlazada
+            - costo - acceder de forma aleatoria
+            - secuencia o iteracion - rendimiento constante y rapido
+            - agregar elementos es rapido too
+            - rapido en cualquier parte - no solo al final de la lista
+            - manipular - si se obtiene un objeto lo elimina
+            - rapido para minipular
+        - Sincronized verctor
+            - para trabajar con concurrencia con hilos o recursos que acceden - forma segura y protegida - una a la vez
+            - elementos protegidos de otros hilos - accede una a la vez
+            - los anteriores no estan protegidos - no sincronizan los accesos
+            - los otros utilizando clases helpers se pueden sincronizar
+    - Interfaz Set
+        - hashSet
+            -elemento add para agregar - no asegura ningun orden - no ordenado
+            -no admite duplicados
+            -utiliza hashcode - todos los elementos implementan hashCode() se compara y determina que es unico para no agregar duplicados
+            - por detras trabaja con maps
+        - treeSet
+            - parecido a un list, ordenado - no admite diplicados
+            - si se elimina o algo asi menos rendimiento - debe ordenadar
+        - lindedHashSet
+            - combina hashset con listaenlazada
+
+
+

@@ -1,0 +1,18 @@
+API STREAM
+Combina iteratos y expresiones lamda para implementar flujos de datos
+
+Secuencia de elementos
+fuente de datos - lista o coleccion de java - set, list array - implemente la interfaz collection
+-pasan por una serie de pipes o filtros
+-tranformacion de datos - flujo de datos
+
+-Streams no son contenedores - conduccion para realizar transformaciones sobre los datos de la fuente
+- o sea la lista
+-transmite los datos de la fuente
+
+-crear flujos de datos continuos para procesar secuencia de elementos
+-operadores reducen las tareas de transformacion - transformar el tipo de datos, max, min, sum, distinct, groups y asi
+-compone flujos con los operadores map - manipular, foreach - iterar, reduce - operacion mat, otros
+-puede ser creado desde cualquier tipo collections y arrays, rangos
+-son inmutables - cada vez que se llama un operador - map, filter y otros no modifican el stream original
+-sino que se crea una instancia nueva con los datos transformados

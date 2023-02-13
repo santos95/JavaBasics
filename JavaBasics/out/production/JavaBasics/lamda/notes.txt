@@ -1,0 +1,25 @@
+//    a partir de java 8
+//    base a programacion funcional
+//    expresiones lambda - api stream y demas
+
+    //expresion lamda - implementar un metodo on the fly - sin implementar una clase
+    //expresion lamda - interfaz funcional - se implementa un metodo abstracto on the fly
+    //es anonimo - no requiere una clase para poderse implementar
+
+    consumer - expresion lamda que permite pasar como un argumento un parametro
+
+    Consumer - expresion lamda - utiliza genericos - para el caso de tipo string
+    Consumer<String> stringConsumer = hello -> System.out.println(hello);
+    define un string - parametro
+    stringconsumer - nombre de la expresion
+    hello - es el parametro del tipo string en este caso
+    podria definirse asi (String hello)
+
+    hello es el argumento - es void no regresa nada
+
+    behind the escene a consumer - lamda expression - interfaz funcinal
+
+    por defecto el consumer acepta un argumento por defecto
+
+    Supplier - expresion lamda - retorna un valor
+    -no requiere argumento - retorna un valor - siempre incluye un return
