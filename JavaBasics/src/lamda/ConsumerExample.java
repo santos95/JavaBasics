@@ -2,6 +2,7 @@ package lamda;
 
 import org.w3c.dom.ls.LSOutput;
 
+import java.beans.Customizer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,6 +14,27 @@ import java.util.function.Supplier;
 
 public class ConsumerExample {
     public static void main(String[] args) {
+
+        Consumer<String> dummyToUppercase = value -> {
+            System.out.println(value.toUpperCase());
+        };
+
+        dummyToUppercase.accept("hello there Santi!!!!");
+        System.out.println("-----------------------------------------------");
+
+        BiConsumer<String, String> dummyCreateFullName = (fName, lName) -> {
+            System.out.println("-----------------------------------------------");
+            System.out.println("dummyCreateFullName - lamda expression");
+            System.out.println(fName.toUpperCase().concat(" ").concat(lName.toUpperCase()));
+            System.out.println("-----------------------------------------------");
+        };
+
+        dummyCreateFullName.accept("peter", "parker");
+
+        SuperHero ironMan = new SuperHero("Tony", "Startk", 29);
+
+        dummyCreateFullName.accept(ironMan.getFirstName(), ironMan.getLastName());
+
         Consumer<String> stringConsumer = hello -> System.out.println(hello);
 
         stringConsumer.accept("Hello there");
@@ -56,7 +78,10 @@ public class ConsumerExample {
         userEmailConsumer.accept(user1, "sortiz@gmail.com");
         System.out.println(user1);
 
-        Supplier<String> stringSupplier = () -> {return "Hello there - Obi Wan kenobi";};
+        Supplier<String> stringSupplier = () -> {
+            return "Hello there - Obi Wan kenobi";
+        };
+
         System.out.println(stringSupplier.get());
 
         Supplier<User> createUser = () -> {
@@ -75,7 +100,25 @@ public class ConsumerExample {
         System.out.println(user3);
 
 
+        //*
+        // USE LAMDA EXPRESSION TO PRINT A LIST OF AN OBJECT
+        // */
+        System.out.println("Print with foreach and using a lamda function");
+        
+        List<SuperHero> avengers = new ArrayList<>();
 
+        avengers.add(new SuperHero("Steve", "Rogers", 90));
+        avengers.add(new SuperHero("Tony", "Stark", 30));
+        avengers.add(new SuperHero("Peter", "Parker", 20));
+        avengers.add(new SuperHero("Hank", "Pynm", 30));
+
+        BiConsumer<String, String> superHero = (fName, lName) -> {
+            System.out.println(fName.toUpperCase().concat(" ").concat(lName));
+        };
+
+        avengers.forEach(avenger -> {
+            superHero.accept(avenger.getFirstName(), avenger.getLastName());
+        });
 
     }
 }

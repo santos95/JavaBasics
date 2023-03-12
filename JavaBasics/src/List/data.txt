@@ -1,0 +1,4 @@
+BorussiaDortmund::Chelsea::2::0
+AcMilan::Totenham::2::0
+Newcastle United::Manchester United::1::0
+FC Barcelona::Real Madrid::0::2

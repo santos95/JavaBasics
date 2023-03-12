@@ -23,3 +23,11 @@
 
     Supplier - expresion lamda - retorna un valor
     -no requiere argumento - retorna un valor - siempre incluye un return
+
+    Function<input, output>
+    Combina consumer y supplier
+    Recibe un valor y retorna un valor
+
+    predicates - para evaluar expresiones booleanas
+    Siempre retorna un boolean
+    Pridecate<Integer> test = num -> num > 10;
